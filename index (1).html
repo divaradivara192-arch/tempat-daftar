@@ -1,0 +1,186 @@
+<<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Landing Page</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: url('https://files.catbox.moe/tf0hvo.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* container super bening */
+.container {
+    width: 360px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* tombol bahasa */
+.lang-btn button {
+    margin: 3px;
+    padding: 6px 10px;
+    border: 1px solid cyan;
+    border-radius: 5px;
+    background: transparent;
+    color: cyan;
+    cursor: pointer;
+}
+
+/* teks */
+h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: cyan;
+    text-shadow: 0 0 6px cyan;
+}
+
+p {
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 16px;
+    margin: 10px 0;
+    color: cyan;
+}
+
+/* tombol */
+.button {
+    display: block;
+    padding: 12px;
+    margin: 10px 0;
+    text-decoration: none;
+    border-radius: 8px;
+
+    border: 1px solid cyan;
+    color: cyan;
+    background: rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: cyan;
+    color: black;
+    box-shadow: 0 0 15px cyan, 0 0 25px cyan;
+    transform: scale(1.05);
+}
+
+/* WATERMARK CYBER */
+.watermark {
+    position: fixed;
+    bottom: 12px;
+    right: 18px;
+    font-size: 12px;
+    color: cyan;
+
+    opacity: 0.7;
+
+    text-shadow: 
+        0 0 5px cyan,
+        0 0 10px cyan,
+        0 0 15px rgba(0,255,255,0.5);
+
+    animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+    from {
+        opacity: 0.5;
+        text-shadow: 0 0 5px cyan;
+    }
+    to {
+        opacity: 1;
+        text-shadow: 0 0 15px cyan, 0 0 25px cyan;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="lang-btn">
+        <button onclick="setLang('id')">ID</button>
+        <button onclick="setLang('cn')">CN</button>
+    </div>
+
+    <h1 id="title"></h1>
+    <p id="desc"></p>
+
+    <h2 id="menu1"></h2>
+    <a href="https://gabungwa.com/signup?ref=71847" class="button" target="_blank" id="btn1"></a>
+
+    <h2 id="menu2"></h2>
+    <a href="https://whatsapp.com/channel/0029VbC1MHP1t90bIcMBrQ14" class="button" target="_blank" id="btn2"></a>
+
+    <h2 id="menu3"></h2>
+    <a href="https://files.catbox.moe/ouuage.png" class="button" target="_blank" id="btn3"></a>
+
+</div>
+
+<!-- watermark -->
+<div class="watermark">@livia.com</div>
+
+<script>
+function setLang(lang) {
+    if (lang === 'id') {
+        title.innerText = "Selamat Datang";
+        desc.innerText = "Daftar sekarang untuk mulai mendapatkan penghasilan. Join channel untuk info terbaru.";
+
+        menu1.innerText = "Daftar";
+        btn1.innerText = "Mulai Sekarang";
+
+        menu2.innerText = "Info";
+        btn2.innerText = "Join Channel";
+
+        menu3.innerText = "Donasi";
+        btn3.innerText = "Dukung Kami";
+    }
+
+    if (lang === 'cn') {
+        title.innerText = "欢迎";
+        desc.innerText = "立即注册并开始赚钱。加入频道获取最新信息。";
+
+        menu1.innerText = "注册";
+        btn1.innerText = "立即开始";
+
+        menu2.innerText = "信息";
+        btn2.innerText = "加入频道";
+
+        menu3.innerText = "捐赠";
+        btn3.innerText = "支持我们";
+    }
+}
+
+setLang('id');
+</script>
+
+</body>
+</html>
