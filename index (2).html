@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Landing Page</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: url('https://files.catbox.moe/tf0hvo.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay dikurangi biar background kelihatan */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3); /* LEBIH TERANG */
+    z-index: 0;
+}
+
+/* Container jadi transparan */
+.container {
+    position: relative;
+    z-index: 1;
+    width: 360px;
+    padding: 25px;
+    border-radius: 15px;
+
+    background: rgba(0,0,0,0.15); /* TRANSPARAN */
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(0,255,255,0.3);
+    box-shadow: 0 0 20px rgba(0,255,255,0.3);
+
+    text-align: center;
+}
+
+/* Switch bahasa */
+.lang-btn button {
+    background: transparent;
+    color: cyan;
+    border: 1px solid cyan;
+    padding: 5px 10px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+/* teks */
+h1 {
+    font-size: 18px;
+    color: #00ffff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px cyan;
+}
+
+p {
+    font-size: 13px;
+    color: #eee;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #00ffff;
+}
+
+/* Tombol neon */
+.button {
+    display: block;
+    padding: 12px;
+    margin: 10px 0;
+    color: cyan;
+    text-decoration: none;
+    border: 1px solid cyan;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: cyan;
+    color: black;
+    box-shadow: 0 0 15px cyan, 0 0 30px cyan;
+    transform: scale(1.05);
+}
+
+/* animasi glow */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px cyan; }
+    50% { box-shadow: 0 0 20px cyan; }
+    100% { box-shadow: 0 0 5px cyan; }
+}
+
+.container {
+    animation: glow 2s infinite;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="lang-btn">
+        <button onclick="setLang('id')">ID</button>
+        <button onclick="setLang('cn')">CN</button>
+    </div>
+
+    <h1 id="title"></h1>
+    <p id="desc"></p>
+
+    <h2 id="menu1"></h2>
+    <a href="https://gabungwa.com/signup?ref=71847" class="button" target="_blank" id="btn1"></a>
+
+    <h2 id="menu2"></h2>
+    <a href="https://whatsapp.com/channel/0029VbC1MHP1t90bIcMBrQ14" class="button" target="_blank" id="btn2"></a>
+
+    <h2 id="menu3"></h2>
+    <a href="https://files.catbox.moe/ouuage.png" class="button" target="_blank" id="btn3"></a>
+
+</div>
+
+<script>
+function setLang(lang) {
+    if (lang === 'id') {
+        title.innerText = "Selamat Datang";
+        desc.innerText = "Daftar sekarang dan mulai dapat penghasilan harian. Join channel untuk info terbaru.";
+
+        menu1.innerText = "Daftar";
+        btn1.innerText = "Mulai Sekarang";
+
+        menu2.innerText = "Info";
+        btn2.innerText = "Join Channel";
+
+        menu3.innerText = "Donasi";
+        btn3.innerText = "Dukung Kami";
+    }
+
+    if (lang === 'cn') {
+        title.innerText = "欢迎";
+        desc.innerText = "立即注册并开始每天赚钱。加入频道获取最新信息。";
+
+        menu1.innerText = "注册";
+        btn1.innerText = "立即开始";
+
+        menu2.innerText = "信息";
+        btn2.innerText = "加入频道";
+
+        menu3.innerText = "捐赠";
+        btn3.innerText = "支持我们";
+    }
+}
+
+setLang('id');
+</script>
+
+</body>
+</html>
